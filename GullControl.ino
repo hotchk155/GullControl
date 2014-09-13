@@ -17,7 +17,7 @@ void controlChange(int channel, int controller, int value) {
   Serial1.write(0xB0|channel);
   Serial1.write((byte)controller);
   Serial1.write((byte)value);
-  usbMIDI.sendControlChange(controller, value, channel);
+  usbMIDI.sendControlChange(controller, value, channel+1);
 }
 
 class CContinuousController
